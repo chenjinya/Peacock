@@ -1,5 +1,5 @@
 /**
- * app.js
+ * colorful.js
  */
 
  module.exports = (content, color, output = false) => {

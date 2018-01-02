@@ -2,6 +2,8 @@
 
 A tiny cluster command execution tool via nodejs.
 
+# Node Version
+ >=  v6.10.1(lower version may work well, I didn't test)
 # Install
 npm install
 
