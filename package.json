@@ -1,0 +1,21 @@
+{
+  "name": "shotgun",
+  "version": "1.0.0",
+  "description": "a tiny cluster command execution tool via nodejs.",
+  "main": "index.js",
+  "dependencies": {
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "node-dev": "^3.1.3"
+  },
+  "scripts": {
+    "start": "node server/app.js",
+    "client": "node client/app.js",
+    "server": "node server/app.js",
+    "dev-server": "./node_modules/node-dev/bin/node-dev server/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jinya Chen",
+  "license": "MIT"
+}
