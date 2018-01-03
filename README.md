@@ -10,7 +10,7 @@ Peacock is a tiny cluster command execution tool via nodejs.
 [![Build Status](https://travis-ci.org/chenjinya/Peacock.svg?branch=master)](https://travis-ci.org/chenjinya/Peacock)
 
 # Node Version
- \>= v1.0
+ \>= v6.0
  
 
 # Install
