@@ -1,7 +1,7 @@
 {
   "name": "peacock",
   "version": "1.0.0",
-  "description": "a tiny cluster command execution tool via nodejs.",
+  "description": "Peacock is a small and beautiful cluster command execute tool via nodejs.",
   "keywords" : [
     "command",
     "cluster",

@@ -3,7 +3,7 @@
 <div align=center>
 <img width="200" height="200" src="./dustbin/logo.jpg" alt="logo"/>
 <p>
-Peacock is a tiny cluster command execution tool via nodejs.
+Peacock is a small and beautiful cluster command execute tool via nodejs.
 </p>
 </div>
 
