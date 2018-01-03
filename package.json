@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "node server/app.js",
-    "client": "node client/app.js",
+    "cmd": "node client/app.js",
     "server": "node server/app.js",
     "dev-server": "./node_modules/node-dev/bin/node-dev server/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,12 +1,12 @@
 /**
  * cmd.js
  */
-var exec = require('child_process').exec;
-var os = require('os');  
+const exec = require('child_process').exec;
+const os = require('os');  
 const uuidV4 = require('uuid/v4');
 const colorful = require('../colorful');
 
-var Cmd = (command, args, config, callback)=>{
+const Cmd = (command, args, config, callback)=>{
     
     try {
         var ret = {
@@ -15,7 +15,7 @@ var Cmd = (command, args, config, callback)=>{
             'output' : 'no output',
             'cost' : 0,
         }
-        var networkInterfaces = os.networkInterfaces();
+        const networkInterfaces = os.networkInterfaces();
         for(ethName in networkInterfaces) {
             for(ethItem of networkInterfaces[ethName]) {
                 if(ethItem.internal == false) {
@@ -25,11 +25,11 @@ var Cmd = (command, args, config, callback)=>{
             }
         }
 
-        var execCommand = command + " " +  args.join(" ");
+        const execCommand = command + " " +  args.join(" ");
 
-        var commandId = config.id;
-        var commondStartTime = Date.now();
-        var cmd = exec(execCommand, (err, stdout, stderr) => {
+        const commandId = config.id;
+        const commondStartTime = Date.now();
+        const cmd = exec(execCommand, (err, stdout, stderr) => {
             // console.log(err, stdout, stderr);
             ret.cost = Date.now() - commondStartTime;
             if(err) {

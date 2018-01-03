@@ -27,7 +27,7 @@ module.exports = (options, callback)=>{
         });
         res.on('end', () => {
             try{
-                var jsonData = JSON.parse(resData);
+                const jsonData = JSON.parse(resData);
                 callback && callback(false, jsonData);
             } catch(e) {
                 callback && callback(e.message, resData);

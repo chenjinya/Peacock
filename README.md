@@ -1,15 +1,23 @@
-# ShotGun
+# Peacock
 
-A tiny cluster command execution tool via nodejs.
+<div align=center>
+<img width="200" height="200" src="./dustbin/logo.jpg" alt="logo"/>
+<p>
+Peacock is a tiny cluster command execution tool via nodejs.
+</p>
+</div>
+
 
 # Node Version
- \>=  v6.10.1(lower version may work well, I didn't test)
+ \>= v1.0
+ 
+
 # Install
 ```
 npm install
 ```
 
-# Develop
+# Dev
 ```
 npm run dev-server
 ```
@@ -21,7 +29,7 @@ npm run server
 
 ## Client side
 ```
-npm run client "cat package.json | grep author"
+npm run cmd "cat package.json | grep author"
 ```
 **output**
 

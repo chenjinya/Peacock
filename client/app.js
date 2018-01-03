@@ -9,7 +9,7 @@ const request = require('./request');
 const colorful = require('../colorful');
 
 var cmdBody = process.argv.splice(2);
-var cmd = cmdBody.pop();
+const cmd = cmdBody.pop();
 if(!(cmd)) {
     colorful( 'command error', 'notice', true);
     colorful( 'Useage: command [param];', 'normal', true);
@@ -19,8 +19,8 @@ if(!(cmd)) {
 
 
 var commandStructure = cmd.split(" ");
-var command = commandStructure.shift();
-var commandArgs = commandStructure;
+const command = commandStructure.shift();
+const commandArgs = commandStructure;
 const query = querystring.stringify({
     'param': JSON.stringify({
         'command': command,

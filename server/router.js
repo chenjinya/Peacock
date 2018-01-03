@@ -6,34 +6,36 @@ const url = require('url');
 const querystring = require('querystring');
 const colorful = require('../colorful');
 
-var pong = (res, data) => {
+const pong = (res, data) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     res.end(data);
 }
-var ok = (res, data = 'ok') => {
+const ok = (res, data = 'ok') => {
     pong(res, data);
 }
-var nok = (res, errmsg = 'error') => {
+const nok = (res, errmsg = 'error') => {
     pong(res, errmsg);
 }
+const notfound = (res) => {
+    res.statusCode = 404;
+    res.end();
+}
+const Router = (req, res)=>{
 
-var Router = (req, res)=>{
+    const urlParse = url.parse(req.headers.host + req.url);
+    const queryParam = querystring.parse(urlParse.query);
 
-    var urlParse = url.parse(req.headers.host + req.url);
-    var queryParam = querystring.parse(urlParse.query);
-
-    var requestId = req.headers['x-request-id'];
+    const requestId = req.headers['x-request-id'];
     console.log("Request Id:", colorful(requestId, 'info'));
     console.log(queryParam);
 
     if(urlParse.pathname !== '/cmd') {
-        res.statusCode = 404;
-        res.end();
+        notfound(res);
         return true;
     }
     try {
-        var json = JSON.parse(queryParam.param);
+        const json = JSON.parse(queryParam.param);
         if(json.command && json.args) {
             cmd(json.command, json.args, {
                 timeout: 10000,
