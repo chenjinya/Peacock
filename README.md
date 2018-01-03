@@ -55,6 +55,10 @@ Request Id: 72ff367f-7aaf-40e4-8689-8ad2c2337935
   "author": "Jinya Chen",
 ```
 
+## Test
+```
+npm run test
+```
 
 
 ## Warning 
