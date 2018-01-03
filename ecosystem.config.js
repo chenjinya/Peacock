@@ -28,7 +28,7 @@ module.exports = {
         '127.0.0.1',
       ],
       ref  : 'master',
-      repo : 'https://github.com/chenjinya/agora-web-client.git',
+      repo : 'https://github.com/chenjinya/Peacock.git',
       path : '/deploy/to/path',
       "pre-setup" : "some thing",
       'post-deploy' : 'npm install &&  pm2 reload ecosystem.config.js --env production',
