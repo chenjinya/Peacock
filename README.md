@@ -29,6 +29,8 @@ npm run dev-server
 npm run server
 ```
 
+It will create a server by current linux user.The server is waiting for command request.
+
 ### Use PM2
 ```
 pm2 start ecosystem.config.js
@@ -44,6 +46,9 @@ pm2 deploy ecosystem.config.js production
 ```
 npm run cmd "cat package.json | grep author"
 ```
+
+It will send a request to server to execute the command and the server will response the command stdout.
+
 **output**
 
 ```
@@ -61,7 +66,7 @@ Request Id: 72ff367f-7aaf-40e4-8689-8ad2c2337935
 ```
 
 ## Config
-Before running, you should config IPs in `client/targets.js`
+Before running, you should config IPs in `client/targets.js`.
 
 ## Test
 ```
