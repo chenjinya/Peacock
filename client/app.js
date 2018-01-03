@@ -12,8 +12,8 @@ var cmdBody = process.argv.splice(2);
 const cmd = cmdBody.pop();
 if(!(cmd)) {
     colorful( 'command error', 'notice', true);
-    colorful( 'Useage: command [param];', 'normal', true);
-    colorful( 'Example: \n      ls -lat /', 'normal', true);
+    colorful( 'Useage: npm run cmd "your command"  ', 'normal', true);
+    colorful( 'Example: \n    npm run cmd "cat package.json | grep author"    ', 'normal', true);
     return false;
 }
 
