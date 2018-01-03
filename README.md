@@ -37,6 +37,7 @@ pm2 start ecosystem.config.js
 ```
 
 ### Use PM2 deploy
+*edit `ecosystem.config.js` properly firstly
 ```
 pm2 deploy ecosystem.config.js production setup
 pm2 deploy ecosystem.config.js production
