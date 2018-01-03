@@ -7,7 +7,7 @@ module.exports = {
 
     // First application
     {
-      name      : 'Peacock',
+      name      : 'Qomolangma',
       script    : 'server/app.js',
       log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
       env_production : {
@@ -28,7 +28,7 @@ module.exports = {
         '127.0.0.1',
       ],
       ref  : 'master',
-      repo : 'https://github.com/chenjinya/Peacock.git',
+      repo : 'https://github.com/chenjinya/Qomolangma.git',
       path : '/deploy/to/path',
       "pre-setup" : "some thing",
       'post-deploy' : 'npm install &&  pm2 reload ecosystem.config.js --env production',

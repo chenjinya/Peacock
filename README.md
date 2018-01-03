@@ -1,13 +1,15 @@
-# Peacock
+# Qomolangma 珠穆朗玛
 
 <div align=center>
 <img width="200" height="200" src="./dustbin/logo.jpg" alt="logo"/>
 <p>
-Peacock is a small and beautiful cluster command execute tool via nodejs.
+Qomolangma is a small and beautiful cluster command execute tool via nodejs.
+
 </p>
+<p>一览众山小</p>
 </div>
 
-[![Build Status](https://travis-ci.org/chenjinya/Peacock.svg?branch=master)](https://travis-ci.org/chenjinya/Peacock)
+[![Build Status](https://travis-ci.org/chenjinya/Qomolangma.svg?branch=master)](https://travis-ci.org/chenjinya/Qomolangma)
 
 # Node Version
  `>=6.0`
@@ -69,6 +71,7 @@ Request Id: 72ff367f-7aaf-40e4-8689-8ad2c2337935
 ## Config
 Before running, you should config IPs in `client/targets.js`.
 
+Default server http port is `8848`
 ## Test
 ```
 npm test

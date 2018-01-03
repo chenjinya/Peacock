@@ -1,7 +1,7 @@
 {
-  "name": "peacock",
+  "name": "qomolangma",
   "version": "1.0.0",
-  "description": "Peacock is a small and beautiful cluster command execute tool via nodejs.",
+  "description": "Qomolangma is a small and beautiful cluster command execute tool via nodejs.",
   "keywords" : [
     "command",
     "cluster",
@@ -17,10 +17,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/chenjinya/Peacock.git"
+    "url": "https://github.com/chenjinya/Qomolangma.git"
   },
   "bugs" :{ 
-    "url" : "https://github.com/chenjinya/Peacock/issues", 
+    "url" : "https://github.com/chenjinya/Qomolangma/issues", 
     "email" : "jinyachen@gmail.com"
   },
   "scripts": {
