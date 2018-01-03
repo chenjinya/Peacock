@@ -42,3 +42,9 @@ Request Id: 72ff367f-7aaf-40e4-8689-8ad2c2337935
   "author": "Jinya Chen",
 ```
 
+## Warning 
+
+It's so danger when you run this program by root user.
+
+In most case, you should forbidden outside network access.
+
