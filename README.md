@@ -10,9 +10,8 @@ Peacock is a tiny cluster command execution tool via nodejs.
 [![Build Status](https://travis-ci.org/chenjinya/Peacock.svg?branch=master)](https://travis-ci.org/chenjinya/Peacock)
 
 # Node Version
- \>= v6.0
+ `>=6.0`
  
-
 # Install
 ```
 npm install
@@ -49,22 +48,29 @@ npm run cmd "cat package.json | grep author"
 
 ```
 Request Id: 72ff367f-7aaf-40e4-8689-8ad2c2337935
-[1/2] chenjinyadeMacBook-Pro.local 192.168.11.1   success 20ms
-  "author": "Jinya Chen",
-
-[2/2] chenjinyadeMacBook-Pro.local 192.168.11.1   success 15ms
+[1/1] chenjinyadeMacBook-Pro.local 192.168.11.1   success 20ms
   "author": "Jinya Chen",
 ```
+
+**info**
+```
+|done / total |           hostname          |     ip       |  status | cost|
+[  1    /  1  ] chenjinyadeMacBook-Pro.local  192.168.11.1   success   15ms
+  "author": "Jinya Chen",
+| command     stdout    |
+```
+
+## Config
+Before running, you should config IPs in `client/targets.js`
 
 ## Test
 ```
-npm run test
+npm test
 ```
 
+The test will create a server and try to execute a cmd. If it processing well, test script will show 'Test ok' and exit 0.
 
 ## Warning 
 
-It's so danger when you run this program by root user.
-
-In most case, you should forbidden outside network access.
+It's so **DANGER** when you run this program by **ROOT** user.In most case, you should forbidden outside network access for securit.
 
