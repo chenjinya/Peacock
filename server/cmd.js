@@ -18,7 +18,8 @@ const Cmd = (command, args, config, callback)=>{
         const networkInterfaces = os.networkInterfaces();
         for(ethName in networkInterfaces) {
             for(ethItem of networkInterfaces[ethName]) {
-                if(ethItem.internal == false) {
+                console.log(ethItem);
+                if(ethItem.family === 'IPv4' && ethItem.internal == false) {
                     ret.ip = ethItem.address;
                     break;
                 }
