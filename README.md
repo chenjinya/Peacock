@@ -25,7 +25,20 @@ npm run dev-server
 # Start
 
 ## Server side
+```
 npm run server
+```
+
+### Use PM2
+```
+pm2 start ecosystem.config.js
+```
+
+### Use PM2 deploy
+```
+pm2 deploy ecosystem.config.js production setup
+pm2 deploy ecosystem.config.js production
+```
 
 ## Client side
 ```
@@ -41,6 +54,8 @@ Request Id: 72ff367f-7aaf-40e4-8689-8ad2c2337935
 [2/2] chenjinyadeMacBook-Pro.local 192.168.11.1   success 15ms
   "author": "Jinya Chen",
 ```
+
+
 
 ## Warning 
 
