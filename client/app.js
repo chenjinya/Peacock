@@ -50,11 +50,11 @@ for(ip of targets) {
         if(err || data.error) {
             counter.error ++;
             counter.done ++;
-            console.log(colorful("[" + counter.done + "/" + counter.count+"]",'notice'),  `${data.hostname} ${data.ip}  `,   colorful("error", 'warning'), colorful(data.cost + 'ms', 'normal'));
+            console.log(colorful("[" + counter.done + "/" + counter.count+"]",'notice'),  `${data.hostname} ${data.ip}`,   colorful("error", 'warning'), colorful(data.cost + 'ms', 'normal'));
             err ? console.log(err) : console.log(data.error);
         }  else {
             counter.done ++;
-            console.log(colorful("[" + counter.done + "/" + counter.count+"]", 'notice'), `${data.hostname} ${data.ip}  `,  colorful("success", 'success'), colorful(data.cost + 'ms', 'normal'));
+            console.log(colorful("[" + counter.done + "/" + counter.count+"]", 'notice'), `${data.hostname} ${data.ip}`,  colorful("success", 'success'), colorful(data.cost + 'ms', 'normal'));
             console.log(data.output);
         }
         

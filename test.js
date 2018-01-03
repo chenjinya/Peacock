@@ -3,7 +3,8 @@
  */
 
 const exec = require("child_process").exec;
-const execServerProcess = exec('npm run server', (err, stdout, stderr) => {
+var execClientProcess,execServerProcess;
+execServerProcess = exec('npm run server', (err, stdout, stderr) => {
     if(err || stderr) {
         execClientProcess && execClientProcess.kill();
         execServerProcess && execServerProcess.kill();
@@ -13,14 +14,13 @@ const execServerProcess = exec('npm run server', (err, stdout, stderr) => {
     console.log(stdout);
 
 });
-const execClientProcess = exec('npm run cmd "echo success"', (err, stdout, stderr) => {
+execClientProcess = exec('npm run cmd "echo success"', (err, stdout, stderr) => {
     if(err || stderr) {
         execClientProcess && execClientProcess.kill();
         execServerProcess && execServerProcess.kill();
         console.log("Test fail!");
         process.exit(1);
-    }
-    if(stdout) {
+    } else {
         console.log(stdout);
         execClientProcess && execClientProcess.kill();
         execServerProcess && execServerProcess.kill();
