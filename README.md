@@ -48,7 +48,7 @@ pm2 deploy ecosystem.config.js production
 npm run cmd "cat package.json | grep author"
 ```
 
-It will send a request to server to execute the command and the server will response the command stdout.
+It will send a request to server for executing the command and the server will response the command stdout.
 
 **output**
 
