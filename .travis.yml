@@ -1,5 +1,10 @@
 language: node_js
-before_install:
+node_js:
+  - "6"
+install:
   - npm install
 script:
-- npm run test
+- npm test
+cache:
+  directories:
+    - "node_modules"
