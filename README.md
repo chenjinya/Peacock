@@ -71,7 +71,7 @@ Request Id: 72ff367f-7aaf-40e4-8689-8ad2c2337935
 ## Config
 Before running, you should config IPs in `client/targets.js`.
 
-Default server http port is `8848`
+Default server http port is `8848`. (The height of the Mount Qomolangma is 8848 meters)
 ## Test
 ```
 npm test
