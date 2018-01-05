@@ -29,7 +29,7 @@ const query = querystring.stringify({
 });
 
 var counter = {
-    count: targets.length,
+    count: remotes.length,
     done: 0,
     error: 0,
 };
