@@ -2,7 +2,7 @@
   "name": "qomolangma",
   "version": "1.0.0",
   "description": "Qomolangma is a small and beautiful cluster command execute tool via nodejs.",
-  "keywords" : [
+  "keywords": [
     "command",
     "cluster",
     "nodejs",
@@ -19,9 +19,9 @@
     "type": "git",
     "url": "https://github.com/chenjinya/Qomolangma.git"
   },
-  "bugs" :{ 
-    "url" : "https://github.com/chenjinya/Qomolangma/issues", 
-    "email" : "jinyachen@gmail.com"
+  "bugs": {
+    "url": "https://github.com/chenjinya/Qomolangma/issues",
+    "email": "jinyachen@gmail.com"
   },
   "scripts": {
     "start": "node server/app.js",

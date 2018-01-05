@@ -4,9 +4,10 @@
 const querystring = require('querystring');
 const os = require('os');
 const uuidV4 = require('uuid/v4');
-const targets = require('./targets');
+const remotes = require('./remotes');
 const request = require('./request');
 const colorful = require('../colorful');
+
 
 var cmdBody = process.argv.splice(2);
 const cmd = cmdBody.pop();
@@ -16,7 +17,6 @@ if(!(cmd)) {
     colorful( 'Example: \n    npm run cmd "cat package.json | grep author"    ', 'normal', true);
     return false;
 }
-
 
 var commandStructure = cmd.split(" ");
 const command = commandStructure.shift();
@@ -37,7 +37,7 @@ var counter = {
 //use same request id
 const requestId = uuidV4()
 console.log("Request Id:", colorful(requestId, 'info'));
-for(ip of targets) {
+for(ip of remotes) {
     request({
         hostname: ip,
         port: 8848,
