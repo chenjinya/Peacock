@@ -42,12 +42,7 @@ const Router = (req, res)=>{
                 id: requestId,
             }, (err, data)=>{
                 if(err) {
-                    let errmsg = typeof err == 'string' ? err :  err.message ? err.message :  JSON.stringify(err);
                     console.error(errmsg);
-                    if(data) {
-                        data.error = errmsg; 
-                    }
-                    
                 } 
                 ok(res, JSON.stringify(data));
             });

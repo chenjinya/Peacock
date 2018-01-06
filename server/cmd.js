@@ -11,8 +11,9 @@ const Cmd = (command, args, config, callback)=>{
     try {
         var ret = {
             'hostname': os.hostname(),
-            'ip' : 'not found',
-            'output' : 'no output',
+            'ip' : null,
+            'output' : null,
+            'error' : null,
             'cost' : 0,
         }
         const networkInterfaces = os.networkInterfaces();
@@ -32,11 +33,15 @@ const Cmd = (command, args, config, callback)=>{
         const cmd = exec(execCommand, (err, stdout, stderr) => {
             ret.cost = Date.now() - commondStartTime;
             if(err) {
-                ret.output = err.message;
+                ret.error = err.message;
                 callback && callback(err, ret);
                 console.error('standard error output:\n' + err); 
             } else {
-                ret.output = stdout || stderr;
+                if(stderr) {
+                    ret.error = stderr;
+                } else {
+                    ret.output = stdout;
+                }
                 callback && callback(false, ret);
             }
         });
