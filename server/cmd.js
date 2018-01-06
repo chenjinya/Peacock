@@ -18,7 +18,6 @@ const Cmd = (command, args, config, callback)=>{
         const networkInterfaces = os.networkInterfaces();
         for(ethName in networkInterfaces) {
             for(ethItem of networkInterfaces[ethName]) {
-                console.log(ethItem);
                 if(ethItem.family === 'IPv4' && ethItem.internal == false) {
                     ret.ip = ethItem.address;
                     break;
@@ -31,7 +30,6 @@ const Cmd = (command, args, config, callback)=>{
         const commandId = config.id;
         const commondStartTime = Date.now();
         const cmd = exec(execCommand, (err, stdout, stderr) => {
-            // console.log(err, stdout, stderr);
             ret.cost = Date.now() - commondStartTime;
             if(err) {
                 ret.output = err.message;
