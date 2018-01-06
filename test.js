@@ -14,7 +14,7 @@ execServerProcess = exec('npm run server', (err, stdout, stderr) => {
     console.log(stdout);
 
 });
-execClientProcess = exec('npm run cmd "echo success"', (err, stdout, stderr) => {
+execClientProcess = exec('npm run cli "echo success"', (err, stdout, stderr) => {
     if(err || stderr) {
         execClientProcess && execClientProcess.kill();
         execServerProcess && execServerProcess.kill();

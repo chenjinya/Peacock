@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "node server/app.js",
-    "cmd": "node client/app.js",
+    "cli": "node client/cli.js",
     "server": "node server/app.js",
     "dev-server": "./node_modules/node-dev/bin/node-dev server/app.js",
     "test": "node test.js"
