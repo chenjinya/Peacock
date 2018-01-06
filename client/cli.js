@@ -17,8 +17,10 @@ if(!(cmd)) {
 qomo(cmd, (err, data, counter)=>{
     console.log(colorful("[" + counter.done + "/" + counter.count+"]",'notice'),  `${data.hostname} ${data.ip}`,   err ? colorful("error", 'warning') : colorful("success", 'success'), colorful(data.cost + 'ms', 'normal'));
     if(err || data.error) { 
+        console.log(colorful("ERROR", 'notice'));
         err? console.log(err) : console.log(data.error);
     } else {
+        console.log(colorful("OUTPUT", 'success'));
         console.log(data.output);
     }
 })

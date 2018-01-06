@@ -42,7 +42,7 @@ const Router = (req, res)=>{
                 id: requestId,
             }, (err, data)=>{
                 if(err) {
-                    console.error(errmsg);
+                    console.error(err.message);
                 } 
                 ok(res, JSON.stringify(data));
             });
