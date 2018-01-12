@@ -6,7 +6,7 @@
 Qomolangma is a small and beautiful cluster command execute tool via nodejs.
 
 </p>
-<p>一览众山小</p>
+<p>分布式集群批量命令执行工具（类似百度内部的pdo2)</p>
 </div>
 
 [![Build Status](https://travis-ci.org/chenjinya/Qomolangma.svg?branch=master)](https://travis-ci.org/chenjinya/Qomolangma) [![npm](https://img.shields.io/npm/v/qomolangma.svg)](https://npmjs.com/package/qomolangma) [![NPM Downloads](https://img.shields.io/npm/dm/qomolangma.svg)](https://www.npmjs.com/package/qomolangma) 
