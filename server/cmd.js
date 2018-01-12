@@ -30,7 +30,9 @@ const Cmd = (command, args, config, callback)=>{
 
         const commandId = config.id;
         const commondStartTime = Date.now();
-        const cmd = exec(execCommand, (err, stdout, stderr) => {
+        const cmd = exec(execCommand, {
+            maxBuffer: 1024 * 1024 * 2
+        }, (err, stdout, stderr) => {
             ret.cost = Date.now() - commondStartTime;
             if(err) {
                 ret.error = err.message;
