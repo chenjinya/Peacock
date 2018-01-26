@@ -14,8 +14,21 @@ Qomolangma is a small and beautiful cluster command execute tool via nodejs.
 
 # Node Version
  `>=6.0`
+
+# Npm install
+```
+npm install qomolangma --save
+```
  
-# Install
+## Require in javascript
+```
+const qomo = require("qomolangma");
+qomo(command, (err, data, counter) => {});
+```
+
+Remote server's IPs in file `node_modules/qomolangma/client/remotes.js`
+
+# Install dependencies
 ```
 npm install
 ```
@@ -48,7 +61,7 @@ pm2 deploy ecosystem.config.js production
 
 ## Client side
 ```
-npm run cmd "cat package.json | grep author"
+npm run cli "cat package.json | grep author"
 ```
 
 It will send a request to server for executing the command and the server will response the command stdout.
@@ -70,7 +83,7 @@ Request Id: 72ff367f-7aaf-40e4-8689-8ad2c2337935
 ```
 
 ## Config
-Before running, you should config IPs in `client/targets.js`.
+Before running, you should config IPs in `client/remotes.js`.
 
 Default server http port is `8848`. (The height of the Mount Qomolangma is 8848 meters)
 ## Test
