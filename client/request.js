@@ -11,7 +11,7 @@ module.exports = (options, callback) => {
     headers['Content-Type'] = headers['Content-Type'] ? headers['Content-Type'] : 'application/x-www-form-urlencoded';
     // headrs['Content-Length'] = Buffer.byteLength(query);
     headers['x-request-id'] = headers['x-request-id'] ? headers['x-request-id'] : os.hostname() + Date.now()
-    options = {
+    const _options = {
         hostname: options.hostname,
         port: options.port,
         path: options.path,
@@ -19,7 +19,7 @@ module.exports = (options, callback) => {
         headers: headers
     };
 
-    const request = http.request(options, (res) => {
+    const request = http.request(_options, (res) => {
         res.setEncoding('utf8');
         var resData = '';
         res.on('data', (chunk) => {

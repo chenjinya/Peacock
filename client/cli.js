@@ -14,7 +14,7 @@ if (!(cmd)) {
 }
 
 
-qomo(cmd, (err, data, counter, remote) => {
+qomo(cmd, (err, data, counter, remote = {}) => {
     console.log(colorful("[" + counter.done + "/" + counter.count + "]", 'notice'), `hn:${data.hostname} ip:${data.ip} tg:${remote.tag}`, err ? colorful("error", 'warning') : colorful("success", 'success'), colorful(data.cost + 'ms', 'normal'));
     if (err || data.error) {
         console.log(colorful("ERROR", 'notice'));
