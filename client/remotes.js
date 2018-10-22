@@ -2,5 +2,8 @@
  * remotes.js
  */
 module.exports = [
-    '127.0.0.1',
+    {
+        host: '127.0.0.1',
+        tag: 'local'
+    }
 ]
