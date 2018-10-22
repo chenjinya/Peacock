@@ -36,15 +36,16 @@ module.exports = function (cmd, callback) {
             method: 'GET',
             headers: {
                 'x-request-id': requestId,
-            }
-        }, (err, data) => {
+            },
+            remote: block
+        }, (err, data, remote) => {
             if (err || data.error) {
                 counter.error++;
                 counter.done++;
-                callback && callback(err, data, counter, block);
+                callback && callback(err, data, counter, remote);
             } else {
                 counter.done++;
-                callback && callback(false, data, counter, block);
+                callback && callback(false, data, counter, remote);
             }
 
         });
