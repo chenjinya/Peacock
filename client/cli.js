@@ -13,8 +13,13 @@ if (!(cmd)) {
     return false;
 }
 
-
-qomo(cmd, (err, data, counter, remote = {}) => {
+qomo.remote.set([
+    {
+        host: '127.0.0.1',
+        tag: 'localhost'
+    }
+])
+qomo.command(cmd, (err, data, counter, remote = {}) => {
     console.log(colorful("[" + counter.done + "/" + counter.count + "]", 'notice'), `hn:${data.hostname} ip:${data.ip} tg:${remote.tag}`, err ? colorful("error", 'warning') : colorful("success", 'success'), colorful(data.cost + 'ms', 'normal'));
     if (err || data.error) {
         console.log(colorful("ERROR", 'notice'));

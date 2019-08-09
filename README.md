@@ -16,17 +16,30 @@ Qomolangma is a small and beautiful cluster command execute tool via nodejs.
  `>=6.0`
 
 # Npm install
-```
+
+```shell
 npm install qomolangma --save
 ```
  
 ## Require in javascript
-```
-const qomo = require("qomolangma");
-qomo(command, (err, data, counter) => {});
+
+```javascript
+const qomo = require("qomolangma").command;
+qomo(cmd, (err, data, counter) => {});
 ```
 
 Remote server's IPs in file `node_modules/qomolangma/client/remotes.js`
+
+Update remote server list:
+
+```javascript
+qomo.remote.set([
+  {
+      host: '127.0.0.1',
+      tag: 'local'
+  }
+])
+```
 
 # Install dependencies
 ```

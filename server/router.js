@@ -21,7 +21,7 @@ const notfound = (res) => {
     res.statusCode = 404;
     res.end();
 }
-const Router = (req, res)=>{
+const Router = (req, res) => {
 
     const urlParse = url.parse(req.headers.host + req.url);
     const queryParam = querystring.parse(urlParse.query);
@@ -30,32 +30,32 @@ const Router = (req, res)=>{
     console.log("Request Id:", colorful(requestId, 'info'));
     console.log(queryParam);
 
-    if(urlParse.pathname !== '/cmd') {
+    if (urlParse.pathname !== '/cmd') {
         notfound(res);
         return true;
     }
     try {
         const json = JSON.parse(queryParam.param);
-        if(json.command && json.args) {
+        if (json.command && json.args) {
             cmd(json.command, json.args, {
                 timeout: 10000,
                 id: requestId,
-            }, (err, data)=>{
-                if(err) {
+            }, (err, data) => {
+                if (err) {
                     console.error(err.message);
-                } 
+                }
                 ok(res, JSON.stringify(data));
             });
         } else {
-            nok(res,'Param error');
+            nok(res, 'Param error');
         }
-    } catch( e){
+    } catch (e) {
         console.error(e);
-        nok(res,'Server Exception');
+        nok(res, 'Server Exception');
     }
     return true;
-    
-    
+
+
 }
 
 module.exports = Router;
