@@ -12,6 +12,7 @@ const Cmd = (command, args, config, callback) => {
         var ret = {
             'hostname': os.hostname(),
             'ip': null,
+            'exit': 0,
             'output': null,
             'error': null,
             'cost': 0,
@@ -62,7 +63,8 @@ const Cmd = (command, args, config, callback) => {
             }
             if (code != 0) {
                 ret.cost = Date.now() - commondStartTime;
-                ret.error = `exit: ${code}`;
+                ret.exit = `${code}`;
+                ret.error = 'exit';
                 callback && callback(false, ret);
             }
             console.log(`child process eixt ,exit:${code}, command: ${execCommand}, cost: ${Date.now() - commondStartTime}ms, commondId: ${colorful(commandId, 'info')}`);
