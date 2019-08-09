@@ -1,6 +1,6 @@
 {
   "name": "qomolangma",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Qomolangma is a small and beautiful cluster command execute tool via nodejs.",
   "keywords": [
     "command",
