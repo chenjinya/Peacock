@@ -60,6 +60,11 @@ const Cmd = (command, args, config, callback) => {
             if (cmdTimeout) {
                 clearTimeout(cmdTimeout);
             }
+            if (code != 0) {
+                ret.cost = Date.now() - commondStartTime;
+                ret.error = `exit: ${code}`;
+                callback && callback(false, ret);
+            }
             console.log(`child process eixt ,exit:${code}, command: ${execCommand}, cost: ${Date.now() - commondStartTime}ms, commondId: ${colorful(commandId, 'info')}`);
         });
 
