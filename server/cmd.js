@@ -12,7 +12,6 @@ const Cmd = (command, args, config, callback) => {
         var ret = {
             'hostname': os.hostname(),
             'ip': null,
-            'exit': 0,
             'output': null,
             'error': null,
             'cost': 0,
@@ -36,17 +35,13 @@ const Cmd = (command, args, config, callback) => {
         }, (err, stdout, stderr) => {
             ret.cost = Date.now() - commondStartTime;
             if (err) {
-                ret.error = err.message;
-                callback && callback(err, ret);
                 console.error('standard error output:\n' + err);
+                ret.error = err.message;
             } else {
-                if (stderr) {
-                    ret.error = stderr;
-                } else {
-                    ret.output = stdout;
-                }
-                callback && callback(false, ret);
+                ret.error = stderr;
+                ret.output = stdout;
             }
+            callback && callback(false, ret);
         });
         var cmdTimeout = null;
         if (config.timeout) {
@@ -61,13 +56,7 @@ const Cmd = (command, args, config, callback) => {
             if (cmdTimeout) {
                 clearTimeout(cmdTimeout);
             }
-            if (code != 0) {
-                ret.cost = Date.now() - commondStartTime;
-                ret.exit = `${code}`;
-                ret.error = 'exit';
-                callback && callback(false, ret);
-            }
-            console.log(`child process eixt ,exit:${code}, command: ${execCommand}, cost: ${Date.now() - commondStartTime}ms, commondId: ${colorful(commandId, 'info')}`);
+            console.log(`child process eixt ,exit:${code},singal:${signal}, command: ${execCommand}, cost: ${Date.now() - commondStartTime}ms, commondId: ${colorful(commandId, 'info')}`);
         });
 
         return true;
